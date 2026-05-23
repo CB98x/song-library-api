@@ -1,0 +1,9 @@
+venv/
+__pycache_/
+*.pyc
+.pytest_cache/
+.DS_Store
+.vscode/
+songs.db
+*.sqlite
+*.sqlite3
