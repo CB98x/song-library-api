@@ -7,12 +7,13 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 
 from app.models import Base
+import os
 
 logger = logging.getLogger(__name__)
 
 # Path to the SQLite database file. It'll be created at the project root.
 # In a real app this would be in an env var, not hardcoded.
-DATABASE_URL = "sqlite:///./songs.db"
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./songs.db")
 
 # The engine is the lowest-level interface to the database.
 # check_same_thread=False is a SQLite-specific quirk for FastAPI.
